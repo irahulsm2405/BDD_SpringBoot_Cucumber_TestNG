@@ -1,0 +1,32 @@
+Feature: Add new Product
+
+Background:
+Given Sending request to add new product end point
+
+Scenario: Adding a new product all valid details
+When All product details provided are valid and request is sent
+| Iphone 15 pro  |
+| 256gb, Deep Purple |
+| 149990.00 |
+Then return the saved product
+
+Scenario: Adding a new product with null name
+When Provided any parameter as null.
+| null |
+| 256gb, Deep Purple |
+| 149990.00 |
+Then throw invalid details exception
+
+Scenario: Adding a new product with null description
+When Provided any parameter as null.
+| Iphone 15 pro |
+| null |
+| 149990.00 |
+Then throw invalid details exception
+
+Scenario: Adding a new product with null price
+When Provided any parameter as null.
+| Iphone 15 pro |
+| 256gb, Deep Purple |
+| null |
+Then throw invalid details exception
