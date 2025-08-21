@@ -60,4 +60,28 @@ public class ProductServiceImpl implements ProductService {
 		
 	}
 
+	@Override
+	public ProductEntity updateProduct(int id, ProductEntity productEntity) {
+		
+		try{
+			Double price = productEntity.getPrice();
+			if (productEntity.getName() == null || productEntity.getName().trim().length() == 0 || productEntity.getName().equalsIgnoreCase("null")) {
+				throw new InvalidNameException("Input name cannot be null");
+			} 
+			else if (productEntity.getDescription() == null || productEntity.getDescription().trim().length() == 0 || productEntity.getDescription().equalsIgnoreCase("null")) {
+				throw new InvalidDescriptionException("Input description cannot be null");
+			} 
+			else if (price==null || price<=0.00) {
+				throw new InvalidPriceException("Input price cannot be null or less than 0");
+			} 
+			else {
+				productEntity.setId(id);
+				return productRepository.save(productEntity);
+			}
+		}catch(Exception e){
+			throw new ProductDoesNotExistException("Product does not exists");
+		}
+		
+	}
+
 }

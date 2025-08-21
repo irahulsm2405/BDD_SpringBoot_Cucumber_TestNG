@@ -1,0 +1,20 @@
+Feature: Get products
+
+Background:
+Given Sending request to get products end point
+
+Scenario: Get all products
+When A get request is sent to getAllProducts
+Then Return list of products
+
+Scenario: Get all products returns empty list 
+When A get request is sent to getAllProducts
+Then Throw exception that no products available
+
+Scenario: Get products by id
+When A get request is sent to getAllProducts with id {2}
+Then Return product
+
+Scenario: Get products by id returns null
+When A get request is sent to getAllProducts with id {22}
+Then Throw exception that product does not exist

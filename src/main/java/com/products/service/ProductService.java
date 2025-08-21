@@ -16,4 +16,6 @@ public interface ProductService {
 
 	void deleteAllProducts();
 
+	ProductEntity updateProduct(int id, ProductEntity entity);
+
 }

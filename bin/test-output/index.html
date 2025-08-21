@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\rahul\AppData\Local\Temp\testng-eclipse--1536588076\testng-customsuite.xml</span>
+                    <span>C:\Users\rahul\AppData\Local\Temp\testng-eclipse--699948500\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="runner.TestNGRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Delete all products&quot;, &quot;Delete products&quot;)">runScenario("Delete all products", "Delete products")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,17 +117,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="runner.TestNGRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Update with invalid data&quot;, &quot;Update existing Product&quot;)">runScenario("Update with invalid data", "Update existing Product")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="runner.TestNGRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Update a product that does not exist&quot;, &quot;Update existing Product&quot;)">runScenario("Update a product that does not exist", "Update existing Product")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="runner.TestNGRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Successfully update an existing product&quot;, &quot;Update existing Product&quot;)">runScenario("Successfully update an existing product", "Update existing Product")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="runner.TestNGRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Delete product by id&quot;, &quot;Delete products&quot;)">runScenario("Delete product by id", "Delete products")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -128,6 +132,36 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">runner.TestNGRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Delete all products&quot;, &quot;Delete products&quot;)">
+                  </a> <!-- runScenario("Delete all products", "Delete products") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Delete all products","Delete products")</span>
+                  <div class="stack-trace">org.springframework.web.client.HttpClientErrorException$NotFound: 404  on GET request for &quot;http://localhost:8081/product&quot;: &quot;No products available&quot;
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:112)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:186)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:442)
+	at stepDefinitions.controller.DeleteProductSteps.delete_all_products(DeleteProductSteps.java:61)
+	at ✽.Delete all products(file:///C:/STS-WS/ProductsMicroservice/src/test/java/features/controller/delete_Product.feature:12)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -136,30 +170,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Update with invalid data&quot;, &quot;Update existing Product&quot;)">
-                  </a> <!-- runScenario("Update with invalid data", "Update existing Product") -->
+                  <a name="runScenario(&quot;Delete product by id&quot;, &quot;Delete products&quot;)">
+                  </a> <!-- runScenario("Delete product by id", "Delete products") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Update with invalid data","Update existing Product")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;Update a product that does not exist&quot;, &quot;Update existing Product&quot;)">
-                  </a> <!-- runScenario("Update a product that does not exist", "Update existing Product") -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("Update a product that does not exist","Update existing Product")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;Successfully update an existing product&quot;, &quot;Update existing Product&quot;)">
-                  </a> <!-- runScenario("Successfully update an existing product", "Update existing Product") -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("Successfully update an existing product","Update existing Product")</span>
+                  <span class="parameters">("Delete product by id","Delete products")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -169,7 +183,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\rahul\AppData\Local\Temp\testng-eclipse--1536588076\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\rahul\AppData\Local\Temp\testng-eclipse--699948500\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -226,24 +240,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'runner.TestNGRunner')
-data.setCell(0, 3, 556);
+data.setCell(0, 3, 550);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'runner.TestNGRunner')
-data.setCell(1, 3, 26);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'runScenario')
-data.setCell(2, 2, 'runner.TestNGRunner')
-data.setCell(2, 3, 9);
+data.setCell(1, 3, 32);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 591 ms</span>
+              <span class="suite-total-time">Total running time: 582 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -271,24 +281,22 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">runner.TestNGRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@3a022576)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@57bd802b)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">runScenario("Successfully update an existing product", "Update existing Product")</span>
-                <span class="method-start">252 ms</span>
+                <span class="method-name">runScenario("Delete product by id", "Delete products")</span>
+                <span class="method-start">254 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">runScenario("Update a product that does not exist", "Update existing Product")</span>
-                <span class="method-start">812 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">runScenario("Update with invalid data", "Update existing Product")</span>
-                <span class="method-start">839 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Delete all products", "Delete products")</span>
+                <span class="method-start">811 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">852 ms</span>
+                <span class="method-start">848 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
