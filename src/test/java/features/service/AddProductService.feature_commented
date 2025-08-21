@@ -1,0 +1,32 @@
+Feature: Add new Product
+
+Background:
+Given Add new product using Service class
+
+Scenario: Adding a new product all valid details
+When All product details provided are valid
+| Iphone 15 pro  |
+| 256gb, Deep Purple |
+| 149990.00 |
+Then return the product saved
+
+Scenario: Adding a new product with name as null
+When Provided null to any parameter
+| null |
+| 256gb, Deep Purple |
+| 149990.00 |
+Then Throw invalid name exception
+
+Scenario: Adding a new product with null description
+When Provided null to any parameter
+| Iphone 15 pro |
+| null |
+| 149990.00 |
+Then Throw invalid description exception
+
+Scenario: Adding a new product with null price
+When Provided null to any parameter
+| Iphone 15 pro |
+| 256gb, Deep Purple |
+| null |
+Then Throw invalid price exception

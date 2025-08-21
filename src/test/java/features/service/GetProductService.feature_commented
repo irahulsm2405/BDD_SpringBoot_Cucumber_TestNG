@@ -1,0 +1,16 @@
+Feature: Get Products
+
+ Background:
+Given Product service is available
+
+Scenario: Get all products
+When Requesting all products
+Then A list of products should be returned
+
+Scenario: Get product by valid ID
+When Requesting product with ID 1
+Then Product with ID 1 should be returned
+
+Scenario: Get product by invalid ID
+When Requesting product with ID 999
+Then ProductDoesNotExistException should be thrown
